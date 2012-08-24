@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C3F3C525-170E-484C-90D8-040F75C843D5}</ProjectGuid>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>CordovaTest</RootNamespace>
+    <AssemblyName>CordovaTest</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchProfiling>true</MtouchProfiling>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>ARMv7</MtouchArch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchLink>None</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchProfiling>true</MtouchProfiling>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <BuildIpa>true</BuildIpa>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+    <Reference Include="Cordova">
+      <HintPath>..\..\src\public\mono\monotouch-bindings\Cordova\Binding\Cordova.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="CordovaTestViewController.cs" />
+    <Compile Include="CordovaTestViewController.designer.cs">
+      <DependentUpon>CordovaTestViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainViewController.cs" />
+    <Compile Include="MainViewController.designer.cs">
+      <DependentUpon>MainViewController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="CordovaTestViewController.xib" />
+    <InterfaceDefinition Include="MainViewController_iPhone.xib" />
+    <InterfaceDefinition Include="MainViewController_iPad.xib" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="www\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="www\res\screen\android_hdpi_landscape.png" />
+    <Content Include="www\res\screen\android_hdpi_portrait.png" />
+    <Content Include="www\res\screen\android_ldpi_landscape.png" />
+    <Content Include="www\res\screen\android_ldpi_portrait.png" />
+    <Content Include="www\res\screen\android_mdpi_landscape.png" />
+    <Content Include="www\res\screen\android_mdpi_portrait.png" />
+    <Content Include="www\res\screen\android_xhdpi_landscape.png" />
+    <Content Include="www\res\screen\android_xhdpi_portrait.png" />
+    <Content Include="www\res\screen\blackberry_transparent_300.png" />
+    <Content Include="www\res\screen\blackberry_transparent_400.png" />
+    <Content Include="www\res\screen\ipad_landscape.png" />
+    <Content Include="www\res\screen\ipad_portrait.png" />
+    <Content Include="www\res\screen\ipad_retina_landscape.png" />
+    <Content Include="www\res\screen\ipad_retina_portrait.png" />
+    <Content Include="www\res\screen\iphone_landscape.png" />
+    <Content Include="www\res\screen\iphone_portrait.png" />
+    <Content Include="www\res\screen\iphone_retina_landscape.png" />
+    <Content Include="www\res\screen\iphone_retina_portrait.png" />
+    <Content Include="www\res\screen\windows_phone_portrait.jpg" />
+    <Content Include="www\img\cordova.png" />
+    <Content Include="Cordova.plist" />
+    <Content Include="www\spec.html" />
+    <Content Include="www\config.xml" />
+    <Content Include="www\cordova-2.0.0.js" />
+    <Content Include="www\index.html" />
+    <Content Include="www\cordova.ios.js" />
+    <Content Include="www\spec\lib\jasmine-1.2.0\jasmine-html.js" />
+    <Content Include="www\spec\lib\jasmine-1.2.0\jasmine.css" />
+    <Content Include="www\spec\lib\jasmine-1.2.0\jasmine.js" />
+    <Content Include="www\spec\lib\jasmine-1.2.0\MIT.LICENSE" />
+    <Content Include="www\spec\helper.js" />
+    <Content Include="www\spec\index.js" />
+    <Content Include="www\res\icon\cordova_16.png" />
+    <Content Include="www\res\icon\cordova_24.png" />
+    <Content Include="www\res\icon\cordova_32.png" />
+    <Content Include="www\res\icon\cordova_48.png" />
+    <Content Include="www\res\icon\cordova_64.png" />
+    <Content Include="www\res\icon\cordova_128.png" />
+    <Content Include="www\res\icon\cordova_256.png" />
+    <Content Include="www\res\icon\cordova_512.png" />
+    <Content Include="www\res\icon\cordova_android_36.png" />
+    <Content Include="www\res\icon\cordova_android_48.png" />
+    <Content Include="www\res\icon\cordova_android_72.png" />
+    <Content Include="www\res\icon\cordova_android_96.png" />
+    <Content Include="www\res\icon\cordova_bb_80.png" />
+    <Content Include="www\res\icon\cordova_ios_57.png" />
+    <Content Include="www\res\icon\cordova_ios_72.png" />
+    <Content Include="www\res\icon\cordova_ios_114.png" />
+    <Content Include="www\res\icon\cordova_ios_144.png" />
+    <Content Include="www\css\index.css" />
+    <Content Include="www\js\index.js" />
+  </ItemGroup>
+</Project>
